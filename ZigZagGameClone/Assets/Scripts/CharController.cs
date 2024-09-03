@@ -45,7 +45,7 @@ public class CharController : MonoBehaviour
             gameManager.EndGame();
         }
 
-        if (!Physics.Raycast(rayStart.position, -transform.up, out ray, Mathf.Infinity) && transform.position.y < 0.3)    //Raycast(位置,方向往下,,距離) 判斷位置以下是否有碰撞體
+        if (!Physics.Raycast(rayStart.position, -transform.up, out ray, Mathf.Infinity) && transform.position.y < 0.3)    //Raycast(位置,方向往下,,距離) 判斷位置以下是否有碰撞體 後面加個判斷解決一個小Bug
         {
             anim.SetTrigger("isFalling");
         }

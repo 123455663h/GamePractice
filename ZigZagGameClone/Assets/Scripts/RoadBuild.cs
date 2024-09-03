@@ -12,7 +12,7 @@ public class RoadBuild : MonoBehaviour
 
     public void StartBuilding()
     {
-        InvokeRepeating("CreateNewRoadPart",1f,1);    //用GameManager來運作這個腳本
+        InvokeRepeating("CreateNewRoadPart",1f,1);    //用GameManager來運作這個腳本(每一秒執行一次)
     }
 
     public void CreateNewRoadPart()
@@ -24,7 +24,7 @@ public class RoadBuild : MonoBehaviour
             spawnPos = new Vector3(lastPos.x + offset, lastPos.y, lastPos.z + offset);    //如果亂數<50，往前加長
         }
         else
-            spawnPos = new Vector3(lastPos.x - offset , lastPos.y , lastPos.z + offset);
+            spawnPos = new Vector3(lastPos.x - offset , lastPos.y , lastPos.z + offset);    //不然往左
 
         GameObject g = Instantiate(roadPrefab,spawnPos, Quaternion.Euler(0,45,0));    //從最後一個路物件隨機往左或往前生成
 
